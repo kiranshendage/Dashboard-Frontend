@@ -8,7 +8,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const collectionData = async () => {
-    let response = await fetch("http://localhost:5000/register", {
+    let response = await fetch("https://dashboard-backend-3-tvfv.onrender.com/register", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
       headers: {

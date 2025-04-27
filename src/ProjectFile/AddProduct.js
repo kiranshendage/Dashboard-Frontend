@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const AddProduct = () => {
@@ -7,28 +8,29 @@ const AddProduct = () => {
   const [category, setCategory] = useState('');
   const [company, setCompany] = useState('');
   const [error,setError] =useState(false);
-  
-
+  const navigate = useNavigate();
     const addProduct =async()=>{
         if(!name||!price||!category||!company){
             setError(true)
            alert("Plz fill all form");
            return false;
         }
-        console.warn(name,price,category,company);
+        //console.warn(name,price,category,company);
         const userId = JSON.parse(localStorage.getItem('user'))._id;
-        let result=await fetch("http://localhost:5000/add/product",{
+        let result=await fetch("https://dashboard-backend-3-tvfv.onrender.com/add/product",{
             method:'post',
             body: JSON.stringify({name,price,category,company,userId}),
             headers:{
-                "content-type":"application/json"
+                "content-type":"application/json",
+                 authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
     })
 
     result = await result.json();
-    console.warn(result);
+    //console.warn(result);
     if(result){
       alert("Successfully Data Added");
+      navigate('/');
     }else{
       alert("Plz try again");
     }

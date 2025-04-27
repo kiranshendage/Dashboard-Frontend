@@ -12,11 +12,14 @@ const UpdateProduct = () => {
 
   useEffect(()=>{
     const getProductDetail = async() =>{
-      
-      let result = await fetch(`http://localhost:5000/product/${params.id}`);
+      let result = await fetch(`https://dashboard-backend-3-tvfv.onrender.com/product/${params.id}`,{
+         headers:{
+            authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+        }
+      });
       result =await result.json();
       
-  
+      
       setName(result.name);
       setPrice(result.price);
       setCategory(result.category);
@@ -28,21 +31,47 @@ const UpdateProduct = () => {
   
 
     const updateProduct =async()=>{
-      console.warn(name,price,category,company);
-      let result = await fetch(`http://localhost:5000/product/${params.id}`,{
+      //console.warn(name,price,category,company);
+      let result = await fetch(`https://dashboard-backend-3-tvfv.onrender.com/product/${params.id}`,{
         method: "PUT",    
         headers: {
           "Content-Type": "application/json",
+          authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
         },
         body: JSON.stringify({ name, price, category, company }), 
       }) 
+      if(result){
         alert("Data updated successfully")
-        result = result.json();
-        console.warn(result);
+        result =await result.json();
         navigate('/');
-      
-    }
-
+      }else{
+        alert("Data does not update");
+      }
+     }
+    // const updateProduct = async () => {
+    //   // console.warn(name, price, category, company);
+    
+    //   // Make the PUT request
+    //   let result = await fetch(`http://localhost:5000/product/${params.id}`, {
+    //     method: "PUT",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       'Authorization': `Bearer ${JSON.parse(localStorage.getItem('token'))}`, // Ensure token is included
+    //     },
+    //     body: JSON.stringify({ name, price, category, company }),
+    //   });
+    
+    //   // Await the response and parse it
+    //   result = await result.json();
+    
+    //   if (result.success) {
+    //     alert("Product updated successfully");
+    //     navigate('/'); // Navigate to the product list after successful update
+    //   } else {
+    //     alert("Failed to update the product");
+    //   }
+    // };
+    
   return (
     <div className="add-product-card">
       <h1 className="title">Update Product data</h1>

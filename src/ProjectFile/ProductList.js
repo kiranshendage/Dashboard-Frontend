@@ -11,19 +11,17 @@ const ProductList = () =>{
     },[]);
 
     const getProducts = async ()=>{
-        let result = await fetch("http://localhost:5000/products",{
-        headers:{
+        let result = await fetch("https://dashboard-backend-3-tvfv.onrender.com/products",{
+            headers: {
                 authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
-        }
+             }
     })
-        result = await result.json();
-        setProducts(result);
+    result = await result.json();
+    setProducts(result);
     }
-    
-
 
     const deleteProduct = async (id) =>{
-        let result = await fetch(`http://localhost:5000/product/${id}`,{
+        let result = await fetch(`https://dashboard-backend-3-tvfv.onrender.com/product/${id}`,{
         method:"Delete",
         headers:{
             authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
@@ -41,9 +39,9 @@ const ProductList = () =>{
     const searchProduct =async (event) =>{
       let key = event.target.value;
       if(key){
-      let result = await fetch(`http://localhost:5000/search/${key}`,{
+      let result = await fetch(`https://dashboard-backend-3-tvfv.onrender.com/search/${key}`,{
         headers: { 
-            authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`  // Retrieve and send token in the Authorization header
+            authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`  
         }
       });
       result =await result.json();
