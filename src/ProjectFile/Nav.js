@@ -14,9 +14,14 @@ const Nav = () => {
     <div className="main">
   {auth ? (
     <ul className="nav-ul">
+      <li><img 
+                src="mo.jpeg" 
+                alt="Product Icon" 
+                className="nav-icon"
+              />
+      </li>
       <li><Link to="/">Product</Link></li>
       <li><Link to="/add/product">Add Product</Link></li>
-      <li><Link to="/update/:id">Update Product</Link></li>
       <li><Link to="/products">Check Products</Link></li>
       {/* //<li><Link to="/productByName/:name">Check ProductByName</Link></li> */}
       <li>

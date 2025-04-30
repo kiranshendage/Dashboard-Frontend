@@ -52,6 +52,10 @@
   font-size: 20px;
   font-weight: 700;
 }
+.nav-ul li a:hover {
+  color: black;
+}
+
 .nav-ul{
   padding: 5px;
   margin: 0;
@@ -288,8 +292,8 @@
 
 .product-list{
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .product-list ul li{
   display: inline-block;
@@ -480,4 +484,47 @@
 .back-btn:hover{
   background-color: black;
   color: white;
+}
+/* ********************productlist******************** */
+/* Example basic styling */
+.product-list {
+  padding: 20px;
+}
+
+.input-bar {
+  padding: 8px;
+  margin-bottom: 16px;
+  width: 300px;
+}
+
+.product-header,
+.product-item {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.actions button,
+.actions a {
+  margin-right: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.update-btn {
+  background-color: yellow;
+  color: black;
+  border: none;
+  border-radius: 5px;
 }
