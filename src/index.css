@@ -11,3 +11,167 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* /////////////////////////////////////////// */
+
+/* Main container */
+.main-signup {
+  height: 93vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(135deg, #FFDEE9, #B5FFFC); */
+  animation: fadeIn 1s ease-in;
+}
+
+/* Card box */
+.main-s {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 320px;
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Heading */
+.main-s h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Input box */
+.input-box {
+  width: 90%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #cef9ff;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.input-box:focus {
+  border-color: #74ebd5;
+  box-shadow: 0 0 8px rgba(116, 235, 213, 0.6);
+}
+
+/* Button */
+.btn-1 {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-1:hover {
+  background: linear-gradient(135deg, #ACB6E5, #74ebd5);
+  transform: scale(1.05);
+}
+
+.btn-1:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* Main login container */
+.main-login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background: linear-gradient(135deg, #FFDEE9, #B5FFFC);*/
+  animation: fadeIn 1s ease-in;
+}
+
+/* Login card */
+.main-l {
+  background: linear-gradient(135deg, #FFDEE9, #B5FFFC);;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 320px;
+  animation: slideUp 0.8s ease-out;
+}
+
+/* Heading */
+.main-l h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Input box */
+.inputBox {
+  width: 80%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.inputBox:focus {
+  border-color: #74ebd5;
+  box-shadow: 0 0 8px rgba(116, 235, 213, 0.6);
+}
+
+/* Button */
+.appButton {
+  width: 60%;
+  padding: 12px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+  border: none;
+  border-radius: 8px;
+  color: #333;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.appButton:hover {
+  background: linear-gradient(135deg, #B5FFFC, #FFDEE9);
+  transform: scale(1.05);
+}
+.appButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+} 

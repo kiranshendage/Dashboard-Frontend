@@ -7,8 +7,9 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   
-  const handleLogin = async() => {
-    console.warn("Email password",email,password);
+  const handleLogin = async(e) => {
+    e.preventDefault();
+    // console.warn("Email password",email,password);
     let result = await fetch('https://dashboard-backend-3-tvfv.onrender.com/login',{
         method:'post',
         body:JSON.stringify({email,password}),
@@ -17,7 +18,7 @@ const Login = () => {
         }
   })
     result = await result.json();
-    console.warn(result)
+    // console.warn(result)
     if(result.auth){
         localStorage.setItem("user",JSON.stringify(result.user));
         localStorage.setItem("token",JSON.stringify(result.auth));
@@ -27,7 +28,7 @@ const Login = () => {
     }
    
   };
-
+  const isFormValid =email && password;
   return (
     <div className="main-login">
       <div className="main-l">
@@ -46,7 +47,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <button onClick={handleLogin} className="appButton" type="button">
+        <button onClick={handleLogin}  disabled={!isFormValid} className="appButton" type="button">
           Login
         </button>
       </div>

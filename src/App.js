@@ -8,6 +8,8 @@ import Login from "./ProjectFile/Login";
 import AddProduct from "./ProjectFile/AddProduct";
 import ProductList from "./ProjectFile/ProductList";
 import UpdateProduct from "./ProjectFile/UpdateProduct";
+import CheackProduct from "./ProjectFile/CheackProduct";
+import CheckProductByName from "./ProjectFile/CheackProductByName";
 
 
 function App() {
@@ -21,7 +23,9 @@ function App() {
             <Route path="/add/product" element={<AddProduct/>} />
             <Route path="/update/:id" element={<UpdateProduct/>} />
             <Route path="/logout" element={<h1>Logout list component</h1>} />
-            <Route path="/profile" element={<h1>Profile list component</h1>} />
+            <Route path="/productByName/:name" element={<CheckProductByName/>} />
+
+            <Route path="/products" element={<CheackProduct/>} />
           </Route>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />

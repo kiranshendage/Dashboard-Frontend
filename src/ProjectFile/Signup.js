@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const collectionData = async () => {
+  const collectionData = async (e) => {
+    e.preventDefault();
     let response = await fetch("https://dashboard-backend-3-tvfv.onrender.com/register", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
@@ -17,7 +19,7 @@ const Signup = () => {
     });
 
     let result = await response.json();
-    console.warn(result);
+    // console.warn(result);
 
     if (result) {
       localStorage.setItem("user", JSON.stringify(result.result));

@@ -48,29 +48,7 @@ const UpdateProduct = () => {
         alert("Data does not update");
       }
      }
-    // const updateProduct = async () => {
-    //   // console.warn(name, price, category, company);
-    
-    //   // Make the PUT request
-    //   let result = await fetch(`http://localhost:5000/product/${params.id}`, {
-    //     method: "PUT",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       'Authorization': `Bearer ${JSON.parse(localStorage.getItem('token'))}`, // Ensure token is included
-    //     },
-    //     body: JSON.stringify({ name, price, category, company }),
-    //   });
-    
-    //   // Await the response and parse it
-    //   result = await result.json();
-    
-    //   if (result.success) {
-    //     alert("Product updated successfully");
-    //     navigate('/'); // Navigate to the product list after successful update
-    //   } else {
-    //     alert("Failed to update the product");
-    //   }
-    // };
+
     
   return (
     <div className="add-product-card">
